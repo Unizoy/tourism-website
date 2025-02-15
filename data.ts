@@ -1,0 +1,75 @@
+import { InsightCard } from "@/types/home/types";
+
+export const categories = [
+  { id: "retail" as const, label: "Retail", count: "08" },
+  { id: "commercial" as const, label: "Commercial", count: "06" },
+  { id: "interior" as const, label: "Interior Design", count: "04" },
+  { id: "residential" as const, label: "Residential", count: "06" },
+];
+
+export const insights: InsightCard[] = [
+  {
+    id: 1,
+    category: "retail",
+    date: "29 Jan 2025",
+    title: "Modern Studio",
+    location: "Blue Water Way",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
+  },
+  {
+    id: 2,
+    category: "commercial",
+    date: "29 Jan 2025",
+    title: "Modern Studio",
+    location: "Blue Water Way",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+  },
+  {
+    id: 3,
+    category: "commercial",
+    date: "29 Jan 2025",
+    title: "Modern Studio",
+    location: "Blue Water Way",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+  },
+  {
+    id: 4,
+    category: "interior",
+    date: "29 Jan 2025",
+    title: "Modern Studio",
+    location: "Blue Water Way",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+  },
+  {
+    id: 5,
+    category: "interior",
+    date: "29 Jan 2025",
+    title: "Modern Studio",
+    location: "Blue Water Way",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+  },
+  {
+    id: 6,
+    category: "residential",
+    date: "29 Jan 2025",
+    title: "Modern Studio",
+    location: "Blue Water Way",
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00",
+  },
+  {
+    id: 7,
+    category: "residential",
+    date: "29 Jan 2025",
+    title: "Modern Studio",
+    location: "Blue Water Way",
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00",
+  },
+  {
+    id: 8,
+    category: "retail",
+    date: "29 Jan 2025",
+    title: "Modern Studio",
+    location: "Blue Water Way",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
+  },
+];
