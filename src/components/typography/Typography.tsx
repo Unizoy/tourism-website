@@ -12,10 +12,13 @@ export const typographyVariants = cva("", {
     variant: {
       heroTitle:
         "text-white font-extralight text-3xl sm:text-5xl md:text-7xl lg:text-8xl",
-      bulletTitle: "text-black font-light text-lg font-sans",
+      bulletTitle: "text-black font-normal text-lg font-sans",
+      mainTitle:"text-black font-normal text-3xl font-sans",
       heading1: "text-black font-noraml text-2xl font-sans",
       heading2:'text-black font-normal text-base md:text-xl font-sans',
-      cardTitle:'text-white font-sans text-base font-light'
+      cardTitle:'text-white font-sans text-lg font-normal',
+      HoverTitle:"text-black font-light text-3xl font-sans",
+      
     },
   },
   defaultVariants: {
