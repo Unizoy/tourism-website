@@ -1,4 +1,4 @@
-import { InsightCard } from "@/types/home/types";
+import { InsightCard, PropertCard } from "@/types/home/types";
 
 export const categories = [
   { id: "retail" as const, label: "Retail", count: "08" },
@@ -71,5 +71,32 @@ export const insights: InsightCard[] = [
     title: "Modern Studio",
     location: "Blue Water Way",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
+  },
+];
+
+export const properties: PropertCard[] = [
+  {
+    id: "01",
+    title: "Modern Studio",
+    location: "In Blue Water Way",
+    image: "/card1.png",
+  },
+  {
+    id: "02",
+    title: "Modern Studio",
+    location: "In Blue Water Way",
+    image: "/card2.png",
+  },
+  {
+    id: "03",
+    title: "Modern Studio",
+    location: "In Blue Water Way",
+    image: "/card2.png",
+  },
+  {
+    id: "04",
+    title: "Modern Studio",
+    location: "In Blue Water Way",
+    image: "/card1.png",
   },
 ];
