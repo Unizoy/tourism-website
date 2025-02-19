@@ -12,8 +12,8 @@ const Blog = () => {
     (insight) => insight.category === activeTab
   );
   return (
-    <div className="h-full w-full bg-white py-8 md:py-14 px-6 md:px-12">
-      <div className="wax-w-7xl mx-auto">
+    <div className="bg-white px-4 md:px-0">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-4">
           <Typography as="p" variant="bulletTitle">
             &bull; Blog
@@ -25,6 +25,7 @@ const Blog = () => {
           </Typography>
           <Button variant="commanButton">View All</Button>
         </div>
+
         {/* tabs */}
         <div className="border-b border-gray-200">
           <div className="flex justify-around w-full ">
@@ -45,7 +46,9 @@ const Blog = () => {
             ))}
           </div>
         </div>
-        {/* card */}
+      </div>
+      {/* card */}
+      <div className="px-8">
         <div className="mt-8 grid md:grid-cols-2 gap-10">
           {activeInsights.map((insight) => (
             <BlogCards key={insight.id} insight={insight} />

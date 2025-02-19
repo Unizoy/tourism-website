@@ -25,7 +25,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-white h-full py-8 md:py-20 px-4">
+    <div className="bg-white py-8 md:py-20 px-4">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
         <div className="space-y-10 font-sans">
           <Typography as="h1" variant="bulletTitle">
