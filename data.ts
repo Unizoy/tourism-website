@@ -1,4 +1,4 @@
-import { InsightCard, PropertCard } from "@/types/home/types";
+import { InsightCard, PropertyCard } from "@/types/home/types";
 
 export const categories = [
   { id: "retail" as const, label: "Retail", count: "08" },
@@ -74,7 +74,7 @@ export const insights: InsightCard[] = [
   },
 ];
 
-export const properties: PropertCard[] = [
+export const properties: PropertyCard[] = [
   {
     id: "01",
     title: "Modern Studio",

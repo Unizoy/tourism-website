@@ -17,7 +17,7 @@ export interface InsightCard {
   image: string;
 }
 
-export interface PropertCard {
+export interface PropertyCard {
   id: string;
   title: string;
   location: string;

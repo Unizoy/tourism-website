@@ -45,7 +45,7 @@ const FeaturedProjects = () => {
             </Button>
           </div>
           <div>
-            <Button variant="commanButton">View All</Button>
+            <Button variant="commonButton">View All</Button>
           </div>
         </div>
         {/* cards */}

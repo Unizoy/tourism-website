@@ -1,5 +1,5 @@
 "use client";
-import { PropertCard } from "@/types/home/types";
+import type { PropertyCard } from "@/types/home/types";
 import { Button } from "../custom-ui/Button";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
@@ -9,7 +9,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import gsap from "gsap";
 
 interface Props {
-  property: PropertCard;
+  property: PropertyCard;
 }
 
 const PropertyCard = ({ property }: Props) => {
@@ -67,7 +67,7 @@ const PropertyCard = ({ property }: Props) => {
       </div>
       <div className="absolute top-[16%] left-0 right-0 z-0 hidden group-hover:block transition-all duration-300">
         <div className="border-t border-[#9DD1FE] left-10 right-10 flex items-center justify-between mt-2">
-          <Typography variant="HoverTitle" className="px-10 py-5">
+          <Typography variant="hoverTitle" className="px-10 py-5">
             8-Bedroom
             <br />
             Waterfront Villa
