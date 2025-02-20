@@ -1,4 +1,4 @@
-import { InsightCard, PropertyCard } from "@/types/home/types";
+import { InsightCard, Leader, PropertyCard } from "@/types/home/types";
 
 export const categories = [
   { id: "retail" as const, label: "Retail", count: "08" },
@@ -98,5 +98,35 @@ export const properties: PropertyCard[] = [
     title: "Modern Studio",
     location: "In Blue Water Way",
     image: "/card1.png",
+  },
+];
+
+export const leaders: Leader[] = [
+  {
+    id: 1,
+    name: "Joe Adam",
+    image: "/leaders/2.png",
+    description:
+      "Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s",
+    experience: "5 Years",
+    areasOfFocus: ["Dubai Marina", "Bluewater Island"],
+  },
+  {
+    id: 2,
+    name: "Rina Mexus",
+    image: "/leaders/3.png",
+    description:
+      "Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s",
+    experience: "8 Years",
+    areasOfFocus: ["Palm Jumeirah", "Downtown Dubai"],
+  },
+  {
+    id: 3,
+    name: "Mexicus Arem",
+    image: "/leaders/1.png",
+    description:
+      "Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s",
+    experience: "12 Years",
+    areasOfFocus: ["Dubai Hills", "Business Bay"],
   },
 ];

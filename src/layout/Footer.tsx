@@ -33,7 +33,7 @@ const Footer = () => {
                 className="flex-1 p-2 border-b border-gray-300 focus:outline-none focus:border-black text-black"
               />
             </div>
-            <Button variant="commanButton">Subscribe</Button>
+            <Button variant="commonButton">Subscribe</Button>
           </div>
         </div>
         {/* navigation */}
@@ -115,7 +115,7 @@ const Footer = () => {
             Change Your Future.
           </h2>
           <div className="flex space-x-4 items-center">
-            <Button variant="commanButton">Subscribe</Button>
+            <Button variant="commonButton">Subscribe</Button>
             <MdMail className="text-black w-8 h-8" />
             <RiSendPlaneFill className="text-black w-8 h-7" />
           </div>

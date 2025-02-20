@@ -23,3 +23,11 @@ export interface PropertyCard {
   location: string;
   image: string;
 }
+export interface Leader {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+  experience: string;
+  areasOfFocus: string[];
+}
