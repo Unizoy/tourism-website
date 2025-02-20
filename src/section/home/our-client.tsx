@@ -2,6 +2,7 @@
 import Typography from "@/components/typography/Typography";
 import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { FiArrowRight } from "react-icons/fi";
 import { clientData } from "../../../data";
 import Image from "next/image";
 
@@ -31,7 +32,7 @@ const OurClient = () => {
         <Typography variant="clientTitle">What Our Client Say</Typography>
         <div className="grid grid-cols-2 py-10">
           <div className="flex">
-            <FaArrowRightLong className="text-black w-8 h-8 mr-8" />
+            <FiArrowRight className="text-black size-7 mr-8" />
             {reorderedData.map((data) => (
               <div key={data.id} className="">
                 <Image
