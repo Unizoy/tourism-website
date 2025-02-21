@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/custom-ui/Button";
-import BlogCards from "@/components/home/BlogCards";
+import BlogCard from "@/components/home/BlogCards";
 import Typography from "@/components/typography/Typography";
 import { Category } from "@/types/home/types";
 import { useState } from "react";
@@ -60,7 +60,7 @@ const Blog = () => {
       <div className="px-8">
         <div className="mt-8 grid md:grid-cols-2 gap-10">
           {activeInsights.map((insight) => (
-            <BlogCards key={insight.id} insight={insight} />
+            <BlogCard key={insight.id} insight={insight} />
           ))}
         </div>
       </div>
