@@ -34,7 +34,7 @@ const OurClient = () => {
           <div className="flex">
             <FiArrowRight className="text-black size-7 mr-8" />
             {reorderedData.map((data) => (
-              <div key={data.id} className="">
+              <div key={data.id}>
                 <Image
                   src={data.image}
                   alt={data.id.toString()}
@@ -46,7 +46,7 @@ const OurClient = () => {
             <Typography variant="heading1">125+ Reviews</Typography>
           </div>
           <div className="flex gap-4">
-            <div className="">
+            <div>
               <Image
                 src="/client-section/comment.png"
                 alt="comment"
