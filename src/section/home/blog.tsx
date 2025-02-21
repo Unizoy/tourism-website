@@ -1,10 +1,11 @@
 "use client";
 import { Button } from "@/components/custom-ui/Button";
-import BlogCards from "@/components/home/BlogCards";
+import BlogCard from "@/components/home/BlogCards";
 import Typography from "@/components/typography/Typography";
 import { Category } from "@/types/home/types";
 import { useState } from "react";
 import { categories, insights } from "../../../data";
+import { motion } from "framer-motion";
 
 const Blog = () => {
   const [activeTab, setActiveTab] = useState<Category>("retail");
@@ -23,35 +24,43 @@ const Blog = () => {
           <Typography as="h1" variant="heading1">
             Latest Insights
           </Typography>
-          <Button variant="commanButton">View All</Button>
+          <Button variant="commonButton">View All</Button>
         </div>
+      </div>
 
-        {/* tabs */}
-        <div className="border-b border-gray-200">
-          <div className="flex justify-around w-full ">
-            {categories.map((category) => (
-              <Button
-                key={category.id}
-                variant="tabButton"
-                active={activeTab === category.id}
-                onClick={() => setActiveTab(category.id)}
-              >
-                <Typography variant="heading2">
-                  {category.label}
-                  <sup className="ml-1 text-xs md:text-base text-gray-500">
-                    {category.count} Articles
-                  </sup>
-                </Typography>
-              </Button>
-            ))}
-          </div>
-        </div>
+      {/* tabs */}
+      <div className="flex justify-around w-full mb-10">
+        {categories.map((category) => (
+          <button
+            key={category.id}
+            onClick={() => setActiveTab(category.id)}
+            className={`relative bg-transparent`}
+            style={{
+              WebkitTapHighlightColor: "transparent",
+            }}
+          >
+            {activeTab === category.id && (
+              <motion.span
+                layoutId="bubble"
+                className="absolute inset-0 z-10 pt-10 border-b-2 border-black"
+                style={{ borderRadius: 0 }}
+                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+              />
+            )}
+            <Typography variant="heading2">
+              {category.label}
+              <sup className="ml-1 text-xs md:text-base text-gray-500">
+                {category.count} Articles
+              </sup>
+            </Typography>
+          </button>
+        ))}
       </div>
       {/* card */}
       <div className="px-8">
         <div className="mt-8 grid md:grid-cols-2 gap-10">
           {activeInsights.map((insight) => (
-            <BlogCards key={insight.id} insight={insight} />
+            <BlogCard key={insight.id} insight={insight} />
           ))}
         </div>
       </div>

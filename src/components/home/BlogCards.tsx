@@ -7,7 +7,7 @@ interface Props {
   insight: InsightCardType;
 }
 
-const Blogtabs = ({ insight }: Props) => {
+const BlogCard = ({ insight }: Props) => {
   return (
     <div className="relative group overflow-hidden rounded-3xl">
       <Image
@@ -34,4 +34,4 @@ const Blogtabs = ({ insight }: Props) => {
     </div>
   );
 };
-export default Blogtabs;
+export default BlogCard;
