@@ -23,3 +23,9 @@ export interface PropertyCard {
   location: string;
   image: string;
 }
+
+export interface ClientData {
+  id: number;
+  description: string;
+  image: string;
+}

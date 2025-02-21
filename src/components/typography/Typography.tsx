@@ -18,7 +18,7 @@ export const typographyVariants = cva("", {
       heading2:'text-black font-normal text-base md:text-xl font-sans',
       cardTitle:'text-white font-sans text-lg font-normal',
       hoverTitle:"text-black font-light text-3xl font-sans",
-      
+      clientTitle:"text-black font-noraml text-4xl font-sans"
     },
   },
   defaultVariants: {

@@ -1,4 +1,4 @@
-import { InsightCard, PropertyCard } from "@/types/home/types";
+import { InsightCard, PropertyCard, ClientData} from "@/types/home/types";
 
 export const categories = [
   { id: "retail" as const, label: "Retail", count: "08" },
@@ -98,5 +98,20 @@ export const properties: PropertyCard[] = [
     title: "Modern Studio",
     location: "In Blue Water Way",
     image: "/card1.png",
+  },
+];
+
+export const clientData:ClientData[] = [
+  {
+    id: 1,
+    description:
+      " Working with this team was an absolute pleasure.They helped me find the perfect property that matched all my needs and preferences. Their expertise and attention to detail made the entire process smooth and stress-free. I couldn't be happier with my new home! ",
+    image: "/client-section/client-1.png",
+  },
+  {
+    id: 2,
+    description:
+      "Working with this team was an absolute pleasure.They helped me find the perfect property that matched all my needs and preferences. Their expertise and attention to detail made the entire process smooth and stress-free. I couldn't be happier with my new home! ",
+    image: "/client-section/client-2.png",
   },
 ];
