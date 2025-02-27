@@ -8,7 +8,6 @@ import { LuTwitter } from "react-icons/lu";
 import { useForm, SubmitHandler } from "react-hook-form";
 import TextareaAutosize from "react-textarea-autosize";
 import { ContactFormValues } from "@/types/home/types";
-import { Button } from "@/components/custom-ui/Button";
 import Typography from "@/components/typography/Typography";
 import { ButtonAnimation } from "@/components/text-animation/button-animation";
 import TextReveal from "@/components/text-animation/text-reveal";

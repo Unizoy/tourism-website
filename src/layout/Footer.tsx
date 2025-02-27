@@ -1,4 +1,3 @@
-import { Button } from "@/components/custom-ui/Button";
 import { ButtonAnimation } from "@/components/text-animation/button-animation";
 import { TextPopUpOrDown } from "@/components/text-animation/text-popup-or-popdown";
 import Image from "next/image";
@@ -13,7 +12,6 @@ const Footer = () => {
 
         <div className="space-y-8 font-sans">
           <div className="flex items-center space-x-2">
-            {/* <h2 className="text-2xl text-black font-medium">Logo</h2> */}
             <TextPopUpOrDown
               as="h2"
               className="text-2xl text-black font-medium"
