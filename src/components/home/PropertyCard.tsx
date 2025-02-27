@@ -2,22 +2,46 @@
 import type { PropertyCard } from "@/types/home/types";
 import { Button } from "../custom-ui/Button";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Typography from "../typography/Typography";
 import { IoLocationOutline } from "react-icons/io5";
 import { GoArrowUpRight } from "react-icons/go";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react"; // ✅ Using useGSAP
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
   property: PropertyCard;
 }
 
 const PropertyCard = ({ property }: Props) => {
-  const imageRef = useRef(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (imageRef.current && cardRef.current) {
+      gsap.fromTo(
+        imageRef.current,
+        { scale:1.5},
+        {
+          scale:1.0,
+          duration: 1.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: cardRef.current,
+            start: "top 80%", // Trigger animation when 80% of the card is visible
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
+  }, []);
+
   const handleMouseEnter = () => {
     if (imageRef.current) {
       gsap.to(imageRef.current, {
-        // y: 220,
         height: "60%",
         duration: 0.6,
         ease: "bounce.out",
@@ -37,13 +61,14 @@ const PropertyCard = ({ property }: Props) => {
 
   return (
     <div
-      className="relative rounded-3xl w-full h-[650px] group"
+      ref={cardRef}
+      className="relative rounded-3xl w-full h-[650px] group overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className="absolute rounded-3xl h-full w-full border bottom-0 overflow-hidden"
         ref={imageRef}
+        className="absolute rounded-3xl h-full w-full border bottom-0 overflow-hidden"
       >
         <Image
           src={property.image}

@@ -1,3 +1,6 @@
+import { TypographyVariants } from "@/components/typography/Typography";
+import { ButtonVariants } from "@/components/custom-ui/Button";
+
 export type Category = "retail" | "commercial" | "interior" | "residential";
 
 export interface ContactFormValues {
@@ -28,4 +31,32 @@ export interface ClientData {
   id: number;
   description: string;
   image: string;
+}
+
+export interface TextPopUpOrDownProps {
+  children?: string | React.ReactNode;
+  stagger?: number;
+  className?: string;
+  variant?: TypographyVariants;
+  delay?: number;
+  start?: string;
+  end?: string;
+  translateX?: number;
+  popFrom?: "up" | "down";
+  translateDuration?: number;
+  duration?: number;
+  as?: CustomTypes.HtmlTag;
+  playOnLoad?: boolean;
+}
+
+export interface ButtonAnimationProps {
+  children?: string | React.ReactNode;
+  stagger?: number;
+  className?: string;
+  variant?: ButtonVariants;
+  delay?: number;
+  start?: string;
+  end?: string;
+  duration?: number;
+  playOnLoad?: boolean;
 }

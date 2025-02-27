@@ -3,7 +3,7 @@ import { cn } from "@/utils/cn";
 import { VariantProps, cva } from "class-variance-authority";
 import React from "react";
 
-const button = cva("button", {
+const ButtonVariants = cva("button", {
   variants: {
     variant: {
       heroSectionButton:
@@ -30,7 +30,7 @@ const button = cva("button", {
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof button> {
+    VariantProps<typeof ButtonVariants> {
   active?: boolean;
 }
 
@@ -41,5 +41,8 @@ export const Button: React.FC<ButtonProps> = ({
 
   ...props
 }) => (
-  <button className={cn(button({ variant, active, className }))} {...props} />
+  <button className={cn(ButtonVariants({ variant, active, className }))} {...props} />
 );
+export type ButtonVariants = VariantProps<
+  typeof ButtonVariants
+>["variant"];
