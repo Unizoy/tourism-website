@@ -10,6 +10,14 @@ import TextareaAutosize from "react-textarea-autosize";
 import { ContactFormValues } from "@/types/home/types";
 import { Button } from "@/components/custom-ui/Button";
 import Typography from "@/components/typography/Typography";
+import { ButtonAnimation } from "@/components/text-animation/button-animation";
+import TextReveal from "@/components/text-animation/text-reveal";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ContactUs = () => {
   const {
@@ -24,6 +32,44 @@ const ContactUs = () => {
     reset();
   };
 
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const contactImageRef = useRef(null);
+
+  useGSAP(() => {
+    if (formRef.current) {
+      const elements = formRef.current.querySelectorAll(".form-item");
+
+      gsap.from(elements, {
+        opacity: 0,
+        y: -50,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: formRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }
+    if (contactImageRef.current) {
+      gsap.fromTo(
+        contactImageRef.current,
+        { scale: 1.5 },
+        {
+          scale: 1.0,
+          duration: 1.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
+  });
+
   return (
     <div className="bg-white py-8 md:py-20 px-4">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
@@ -32,12 +78,12 @@ const ContactUs = () => {
             &bull; Contact Us
           </Typography>
           <div>
-            <h1 className="text-4xl font-normal text-gray-900 mb-4">
+            <TextReveal className="text-4xl font-normal text-gray-900 mb-4">
               Complete This Form
-            </h1>
-            <h2 className="text-4xl font-normal text-gray-900">
+            </TextReveal>
+            <TextReveal className="text-4xl font-normal text-gray-900">
               To Connect Our Team
-            </h2>
+            </TextReveal>
           </div>
           <div className="space-y-8">
             <p className="text-lg font-normal text-black">Follow Us</p>
@@ -53,20 +99,22 @@ const ContactUs = () => {
               </Link>
             </div>
           </div>
-          <div className="">
+          <div className="overflow-hidden">
             <Image
               src="/contactus-image.png"
               alt="contact-us"
               width={450}
               height={100}
+              ref={contactImageRef}
             />
           </div>
         </div>
         <form
           onSubmit={handleSubmit(onsubmit)}
           className="space-y-8 font-sans text-black"
+          ref={formRef}
         >
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 form-item">
             <input
               {...register("firstName", { required: true })}
               type="text"
@@ -84,10 +132,10 @@ const ContactUs = () => {
             {...register("email", { required: true })}
             type="email"
             placeholder="Email Address"
-            className="w-full px-4 py-3 rounded-lg bg-gray-100"
+            className="w-full px-4 py-3 rounded-lg bg-gray-100 form-item"
           />
           <select
-            className="w-full px-4 py-3 rounded-lg bg-gray-100"
+            className="w-full px-4 py-3 rounded-lg bg-gray-100 form-item"
             {...register("location")}
           >
             <option value="">Location</option>
@@ -95,13 +143,15 @@ const ContactUs = () => {
           </select>
           <TextareaAutosize
             {...register("message", { required: true })}
-            className="w-full px-4 py-6 rounded-lg bg-gray-100"
+            className="w-full px-4 py-6 rounded-lg bg-gray-100 form-item"
             placeholder="Message..."
             minRows={10}
           />
-          <Button variant="contactUsButton" type="submit">
-            Submit
-          </Button>
+          <div className="flex justify-start w-full h-full">
+            <ButtonAnimation variant="contactUsButton" type="submit">
+              Submit
+            </ButtonAnimation>
+          </div>
         </form>
       </div>
     </div>

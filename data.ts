@@ -114,4 +114,16 @@ export const clientData:ClientData[] = [
       "Working with this team was an absolute pleasure.They helped me find the perfect property that matched all my needs and preferences. Their expertise and attention to detail made the entire process smooth and stress-free. I couldn't be happier with my new home! ",
     image: "/client-section/client-2.png",
   },
+  {
+    id: 3,
+    description:
+      "Working with this team was an absolute pleasure.They helped me find the perfect property that matched all my needs and preferences. Their expertise and attention to detail made the entire process smooth and stress-free. I couldn't be happier with my new home! ",
+    image: "/client-section/client-2.png",
+  },
+  {
+    id: 4,
+    description:
+      "Working with this team was an absolute pleasure.They helped me find the perfect property that matched all my needs and preferences. Their expertise and attention to detail made the entire process smooth and stress-free. I couldn't be happier with my new home! ",
+    image: "/client-section/client-1.png",
+  },
 ];

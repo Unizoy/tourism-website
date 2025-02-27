@@ -14,6 +14,7 @@ export const typographyVariants = cva("", {
         "text-white font-extralight text-3xl sm:text-5xl md:text-7xl lg:text-8xl",
       bulletTitle: "text-black font-normal text-lg font-sans",
       mainTitle:"text-black font-normal text-3xl font-sans",
+      featuredMainTitle:"text-black text-6xl font-sans font-light",
       heading1: "text-black font-noraml text-2xl font-sans",
       heading2:'text-black font-normal text-base md:text-xl font-sans',
       cardTitle:'text-white font-sans text-lg font-normal',
@@ -67,3 +68,6 @@ const Typography = forwardRef<HTMLElement, TypographyProps>(
 );
 
 export default Typography;
+export type TypographyVariants = VariantProps<
+	typeof typographyVariants
+>["variant"];

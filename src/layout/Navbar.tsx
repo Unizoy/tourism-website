@@ -1,6 +1,24 @@
+'use client'
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
+gsap.registerPlugin(useGSAP);
+
+
 const Navbar = () => {
+  const navRef = useRef(null)
+
+  useGSAP(()=>{
+    gsap.from(navRef.current,{
+      y:-20,
+      duration: 1,
+      opacity: 0,
+    })
+  })
+
   return (
-    <nav className="absolute w-full top-0 z-50 bg-transparent">
+    <nav className="absolute w-full top-0 z-50 bg-transparent" ref={navRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
           {/* Logo */}

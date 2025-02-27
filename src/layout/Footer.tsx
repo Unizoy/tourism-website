@@ -1,4 +1,6 @@
 import { Button } from "@/components/custom-ui/Button";
+import { ButtonAnimation } from "@/components/text-animation/button-animation";
+import { TextPopUpOrDown } from "@/components/text-animation/text-popup-or-popdown";
 import Image from "next/image";
 import Link from "next/link";
 import { MdMail } from "react-icons/md";
@@ -11,21 +13,30 @@ const Footer = () => {
 
         <div className="space-y-8 font-sans">
           <div className="flex items-center space-x-2">
-            <h2 className="text-2xl text-black font-medium">Logo</h2>
+            {/* <h2 className="text-2xl text-black font-medium">Logo</h2> */}
+            <TextPopUpOrDown
+              as="h2"
+              className="text-2xl text-black font-medium"
+            >
+              Logo
+            </TextPopUpOrDown>
           </div>
-          <p className="text-gray-600">
+          <TextPopUpOrDown as="p" className="text-gray-600">
             Building Your Dreams
             <br />
             In Real Estate.
-          </p>
+          </TextPopUpOrDown>
 
           <div className="space-y-8">
-            <h3 className="text-lg font-semibold text-black">
+            <TextPopUpOrDown
+              as="h3"
+              className="text-lg font-semibold text-black"
+            >
               Subscribe To Our News
-            </h3>
-            <p className="text-gray-500">
+            </TextPopUpOrDown>
+            <TextPopUpOrDown as="p" className="text-gray-500">
               Lorem Ipsum Has Been The Industry's Standard Dummy Text
-            </p>
+            </TextPopUpOrDown>
             <div className="flex">
               <input
                 type="email"
@@ -33,15 +44,22 @@ const Footer = () => {
                 className="flex-1 p-2 border-b border-gray-300 focus:outline-none focus:border-black text-black"
               />
             </div>
-            <Button variant="commonButton">Subscribe</Button>
+            <div className="flex justify-start">
+              <ButtonAnimation variant="commonButton">
+                Subscribe
+              </ButtonAnimation>
+            </div>
           </div>
         </div>
         {/* navigation */}
 
         <div className="font-sans">
-          <h3 className="text-2xl text-black font-medium mb-8">
+          <TextPopUpOrDown
+            as="h2"
+            className="text-2xl text-black font-medium mb-8"
+          >
             Quick Navigation
-          </h3>
+          </TextPopUpOrDown>
           <ul className="space-y-6">
             {[
               "Home",
@@ -56,7 +74,7 @@ const Footer = () => {
                   href="#"
                   className="text-gray-500 hover:text-black transition-colors"
                 >
-                  {item}
+                  <TextPopUpOrDown>{item}</TextPopUpOrDown>
                 </Link>
               </li>
             ))}
@@ -65,7 +83,12 @@ const Footer = () => {
 
         {/* Properties */}
         <div className="font-sans">
-          <h3 className="text-2xl text-black font-medium mb-8">Properties</h3>
+          <TextPopUpOrDown
+            as="h2"
+            className="text-2xl text-black font-medium mb-8"
+          >
+            Properties
+          </TextPopUpOrDown>
           <ul className="space-y-6">
             {[
               "Apartments For Sale",
@@ -81,7 +104,7 @@ const Footer = () => {
                   href="#"
                   className="text-gray-500 hover:text-black transition-colors"
                 >
-                  {item}
+                  <TextPopUpOrDown>{item}</TextPopUpOrDown>
                 </Link>
               </li>
             ))}
@@ -91,7 +114,12 @@ const Footer = () => {
         {/* resources */}
         <div className="space-y-8">
           <div className="font-sans">
-            <h3 className="text-2xl text-black font-medium mb-8">Resources</h3>
+            <TextPopUpOrDown
+              as="h2"
+              className="text-2xl text-black font-medium mb-8"
+            >
+              Resources
+            </TextPopUpOrDown>
             <ul className="space-y-4">
               {["Blog", "FAQs", "Buying Guide", "Selling Guide"].map((item) => (
                 <li key={item}>
@@ -99,7 +127,7 @@ const Footer = () => {
                     href="#"
                     className="text-gray-500 hover:text-black transition-colors"
                   >
-                    {item}
+                    <TextPopUpOrDown>{item}</TextPopUpOrDown>
                   </Link>
                 </li>
               ))}
@@ -109,13 +137,13 @@ const Footer = () => {
 
         {/* location */}
         <div className="space-y-4 font-sans">
-          <h2 className="text-xl font-bold text-black">
+          <TextPopUpOrDown as="h2" className="text-xl font-bold text-black">
             We Are Here To
             <br />
             Change Your Future.
-          </h2>
+          </TextPopUpOrDown>
           <div className="flex space-x-4 items-center">
-            <Button variant="commonButton">Subscribe</Button>
+            <ButtonAnimation variant="commonButton">Subscribe</ButtonAnimation>
             <MdMail className="text-black w-8 h-8" />
             <RiSendPlaneFill className="text-black w-8 h-7" />
           </div>
@@ -126,13 +154,13 @@ const Footer = () => {
             height={100}
           />
           <div className="p-4">
-            <p className="font-medium text-black">
+            <TextPopUpOrDown as="p" className="font-medium text-black">
               05, Jumeirah Street,
               <br />
               Al Barsha
               <br />
               Dubai, United Arab Emirates
-            </p>
+            </TextPopUpOrDown>
           </div>
         </div>
       </div>
