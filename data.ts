@@ -1,4 +1,9 @@
-import { InsightCard, Leader, PropertyCard } from "@/types/home/types";
+import {
+  InsightCard,
+  PropertyCard,
+  ClientData,
+  Leader,
+} from "@/types/home/types";
 
 export const categories = [
   { id: "retail" as const, label: "Retail", count: "08" },
@@ -128,5 +133,32 @@ export const leaders: Leader[] = [
       "Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s",
     experience: "12 Years",
     areasOfFocus: ["Dubai Hills", "Business Bay"],
+  },
+];
+
+export const clientData: ClientData[] = [
+  {
+    id: 1,
+    description:
+      " Working with this team was an absolute pleasure.They helped me find the perfect property that matched all my needs and preferences. Their expertise and attention to detail made the entire process smooth and stress-free. I couldn't be happier with my new home! ",
+    image: "/client-section/client-1.png",
+  },
+  {
+    id: 2,
+    description:
+      "Working with this team was an absolute pleasure.They helped me find the perfect property that matched all my needs and preferences. Their expertise and attention to detail made the entire process smooth and stress-free. I couldn't be happier with my new home! ",
+    image: "/client-section/client-2.png",
+  },
+  {
+    id: 3,
+    description:
+      "Working with this team was an absolute pleasure.They helped me find the perfect property that matched all my needs and preferences. Their expertise and attention to detail made the entire process smooth and stress-free. I couldn't be happier with my new home! ",
+    image: "/client-section/client-2.png",
+  },
+  {
+    id: 4,
+    description:
+      "Working with this team was an absolute pleasure.They helped me find the perfect property that matched all my needs and preferences. Their expertise and attention to detail made the entire process smooth and stress-free. I couldn't be happier with my new home! ",
+    image: "/client-section/client-1.png",
   },
 ];
