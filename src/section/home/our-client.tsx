@@ -109,12 +109,12 @@ const OurClient = () => {
         tl.from(
           textRef.current,
           {
-            y: 50, // Moves from slightly below
+            y: 50, 
             opacity: 0,
             duration: 3,
             ease: "power2.out",
           },
-          "<" // Delays the animation AFTER `detailRef` finishes
+          "<" 
         );
       }
     },

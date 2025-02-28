@@ -24,7 +24,7 @@ const TextReveal: React.FC<TextRevealProps> = ({
   children,
   className = "",
   stagger = 0.2,
-  duration = 1,
+  duration = 0.8,
   ease = "back.out",
   triggerOnScroll = true,
   variant = null,
@@ -43,7 +43,7 @@ const TextReveal: React.FC<TextRevealProps> = ({
               trigger: containerRef.current,
               start: "top 80%",
               end: "top 50%",
-              toggleActions: "play none none reverse",
+              toggleActions: "play none none reset",
             }
           : undefined,
       });

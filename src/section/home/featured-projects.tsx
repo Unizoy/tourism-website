@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Button } from "@/components/custom-ui/Button";
 import Typography from "@/components/typography/Typography";
 import { IoIosArrowRoundDown } from "react-icons/io";
