@@ -19,7 +19,6 @@ const Blog = () => {
     (insight) => insight.category === activeTab
   );
 
-  const headingRef = useRef<HTMLHeadingElement | null>(null);
   const tabButtonRef = useRef<HTMLDivElement | null>(null);
   const blogCardsRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -55,7 +54,7 @@ const Blog = () => {
   );
 
   return (
-    <div className="bg-white px-4 md:px-0" ref={containerRef}>
+    <div className="bg-white px-4 md:px-8" ref={containerRef}>
       <div className="max-w-7xl mx-auto">
         <div className="mb-4">
           <Typography as="p" variant="bulletTitle">

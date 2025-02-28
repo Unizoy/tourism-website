@@ -1,5 +1,4 @@
 "use client";
-import { cn } from "@/utils/cn";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 export function ButtonAnimation({
   children,
   stagger = 0.015,
-  // className,
   variant = null,
   delay = 0.0,
   duration = 1,
