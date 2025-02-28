@@ -6,6 +6,13 @@ import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
 
+const cardImage = [
+  { id: 1, src: "/who-we-are/img1.png" },
+  { id: 2, src: "/who-we-are/img2.png" },
+  { id: 3, src: "/who-we-are/img3.png" },
+  { id: 4, src: "/who-we-are/img4.png" },
+];
+
 const WhoWeAre = () => {
   const containerRef = useRef(null);
   useGSAP(() => {
@@ -87,37 +94,19 @@ const WhoWeAre = () => {
           </div>
         </div>
         <div
-          className="absolute inset-0 flex flex-wrap justify-center items-center z-10 gap-20"
+          className="absolute inset-0 flex flex-wrap justify-center items-center z-10 gap-20 mb-40"
           ref={containerRef}
         >
-          <Image
-            src={"/who-we-are/img1.png"}
-            alt="who-we-are"
-            height={200}
-            width={180}
-            className="odd"
-          />
-          <Image
-            src={"/who-we-are/img2.png"}
-            alt="who-we-are"
-            height={200}
-            width={180}
-            className="even"
-          />
-          <Image
-            src={"/who-we-are/img3.png"}
-            alt="who-we-are"
-            height={200}
-            width={180}
-            className="odd"
-          />
-          <Image
-            src={"/who-we-are/img4.png"}
-            alt="who-we-are"
-            height={200}
-            width={180}
-            className="even"
-          />
+          {cardImage.map((image) => (
+            <Image
+              src={image.src}
+              key={image.id}
+              alt="who-we-are"
+              width={180}
+              height={200}
+              className={image.id % 2 === 0 ? "even" : "odd"}
+            />
+          ))}
         </div>
       </div>
     </div>
