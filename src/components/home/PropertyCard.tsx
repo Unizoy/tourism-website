@@ -44,7 +44,7 @@ const PropertyCard = ({ property }: Props) => {
       gsap.to(imageRef.current, {
         height: "60%",
         duration: 0.6,
-        ease: "bounce.out",
+        ease: "power2.out",
       });
     }
   };

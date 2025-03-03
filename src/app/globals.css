@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;  
+    --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
@@ -20,6 +20,74 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.hero-bg{
+.hero-bg {
   background-image: url('/hero-section/hero-image.png');
+}
+
+
+/* state1 */
+.images.state-1 img:nth-child(1) {
+  position: absolute;
+  top: 8rem;
+  z-index: 10;
+  transform: scale(1.4);
+}
+
+.images.state-1 img:nth-child(2) {
+  position: absolute;
+  top: 16rem;
+  right: 8rem;
+  opacity: 0.6;
+}
+
+.images.state-1 img:nth-child(3) {
+  position: absolute;
+  top: 0;
+  left: 8rem;
+  opacity: 0.6;
+}
+
+/* state2 */
+.images.state-2 img:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 8rem;
+  opacity: 0.6;
+}
+
+.images.state-2 img:nth-child(2) {
+  position: absolute;
+  top: 8rem;
+  z-index: 10;
+  transform: scale(1.4);
+
+}
+
+.images.state-2 img:nth-child(3) {
+  position: absolute;
+  top: 16rem;
+  right: 8rem;
+  opacity: 0.6;
+}
+
+/* state3 */
+.images.state-3 img:nth-child(1) {
+  position: absolute;
+  top: 16rem;
+  right: 8rem;
+  opacity: 0.6;
+}
+
+.images.state-3 img:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 8rem;
+  opacity: 0.6;
+}
+
+.images.state-3 img:nth-child(3) {
+  position: absolute;
+  top: 8rem;
+  z-index: 10;
+  transform: scale(1.4);
 }
