@@ -15,7 +15,8 @@ const ButtonVariants = cva("button", {
         "text-black font-sans pb-4 transition-colors duration-300 ease-in-out border-b-2 border-transparent",
       filterButton:
         "flex items-center gap-2 px-4 py-2 text-lg font-sans text-black",
-        locationButton:"flex items-center gap-2 px-5 py-3 text-lg font-sans text-white rounded-full"
+        locationButton:"flex items-center gap-2 px-5 py-3 text-lg font-sans text-white rounded-full",
+        cardDetails:'border border-black px-5 py-5 text-black font-sans text-lg rounded-2xl'
     },
     active: {
       true: "border-black font-semibold",

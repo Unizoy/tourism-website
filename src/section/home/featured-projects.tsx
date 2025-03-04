@@ -5,7 +5,7 @@ import Typography from "@/components/typography/Typography";
 import { IoIosArrowRoundDown } from "react-icons/io";
 import { BsFilter } from "react-icons/bs";
 import { properties } from "../../../data";
-import PropertyCard from "@/components/home/PropertyCard";
+import PropertyCard from "@/components/home/featured-projects/PropertyCard";
 import { ButtonAnimation } from "@/components/text-animation/button-animation";
 import CountUp from "react-countup";
 import { useGSAP } from "@gsap/react";

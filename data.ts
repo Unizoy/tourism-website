@@ -162,3 +162,38 @@ export const clientData: ClientData[] = [
     image: "/client-section/client-1.png",
   },
 ];
+
+export const modalData = [
+  {
+    id: "03",
+    location: "Location Name",
+    type: "Villa",
+    developer: "LuxeLine Properties",
+    title:
+      "8-Bedroom Waterfront Villa With Luxurious Design And Stunning Sea Views",
+    details: [
+      { label: "Square", value: "3070m²" },
+      { label: "Number Of Room", value: "8" },
+      { label: "Number Of Room", value: "50%" },
+      { label: "Number Of Room", value: "8" },
+    ],
+    price: "98,0000 AED",
+    image: "/card1.png",
+  },
+  {
+    id: "02",
+    location: "Location Name",
+    type: "Villa",
+    developer: "LuxeLine Properties",
+    title:
+      "8-Bedroom Waterfront Villa With Luxurious Design And Stunning Sea Views",
+    details: [
+      { label: "Square", value: "3070m²" },
+      { label: "Number Of Room", value: "8" },
+      { label: "Number Of Room", value: "50%" },
+      { label: "Number Of Room", value: "8" },
+    ],
+    price: "98,0000 AED",
+    image: "/card2.png",
+  },
+];

@@ -1,14 +1,15 @@
 "use client";
 import type { PropertyCard } from "@/types/home/types";
-import { Button } from "../custom-ui/Button";
+import { Button } from "../../custom-ui/Button";
 import Image from "next/image";
-import { useRef } from "react";
-import Typography from "../typography/Typography";
+import { useRef, useState } from "react";
+import Typography from "../../typography/Typography";
 import { IoLocationOutline } from "react-icons/io5";
 import { GoArrowUpRight } from "react-icons/go";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react"; // ✅ Using useGSAP
+import { useGSAP } from "@gsap/react";
+import Modal from "./Modal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,13 +21,15 @@ const PropertyCard = ({ property }: Props) => {
   const imageRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useGSAP(() => {
     if (imageRef.current && cardRef.current) {
       gsap.fromTo(
         imageRef.current,
-        { scale:1.5},
+        { scale: 1.5 },
         {
-          scale:1.0,
+          scale: 1.0,
           duration: 1.8,
           ease: "power2.out",
           scrollTrigger: {
@@ -97,7 +100,11 @@ const PropertyCard = ({ property }: Props) => {
             <br />
             Waterfront Villa
           </Typography>
-          <Button className="border border-black px-5 py-5 text-black font-sans text-lg rounded-2xl">
+          <Button
+            className="border border-black"
+            onClick={() => setIsModalOpen(true)}
+            variant="cardDetails"
+          >
             View Details
           </Button>
         </div>
@@ -113,6 +120,9 @@ const PropertyCard = ({ property }: Props) => {
           </div>
         </div>
       </div>
+      
+      {/* Use the new carousel modal component */}
+      <Modal isShowing={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
