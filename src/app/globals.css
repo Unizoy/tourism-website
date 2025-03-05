@@ -24,13 +24,17 @@ body {
   background-image: url('/hero-section/hero-image.png');
 }
 
+.images img{
+  transform: 0.5s ease-in-out;
+}
 
 /* state1 */
 .images.state-1 img:nth-child(1) {
   position: absolute;
   top: 8rem;
   z-index: 10;
-  transform: scale(1.4);
+  scale: 1.5;
+  /* transform: scale(1.4); */
 }
 
 .images.state-1 img:nth-child(2) {
@@ -59,7 +63,8 @@ body {
   position: absolute;
   top: 8rem;
   z-index: 10;
-  transform: scale(1.4);
+  scale: 1.5;
+  /* transform: scale(1.4); */
 
 }
 
@@ -89,5 +94,29 @@ body {
   position: absolute;
   top: 8rem;
   z-index: 10;
-  transform: scale(1.4);
+  scale: 1.5;
+  /* transform: scale(1.4); */
+}
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  animation: progress 4s linear forwards;
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  /* min-width: 0; */
 }

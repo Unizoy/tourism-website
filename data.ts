@@ -197,3 +197,9 @@ export const modalData = [
     image: "/card2.png",
   },
 ];
+
+export const modalTabs = [
+  { id: 1, name: "General info" },
+  { id: 2, name: "About" },
+  { id: 3, name: "Layout" },
+];

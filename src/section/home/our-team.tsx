@@ -33,7 +33,7 @@ const OurTeam = () => {
   
 
     Flip.from(state, {
-      duration: 0.6,
+      duration: 0.4,
       ease: "power1.inOut",
       absolute: true,
       clearProps: "scale,opacity", 

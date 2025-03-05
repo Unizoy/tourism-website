@@ -1,31 +1,14 @@
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import PropertyModal from "./PropertyModal";
 import LayoutCard from "./LayoutCard";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import {modalData} from '../../../../data'
+import { modalData, modalTabs } from "../../../../data";
 import { IoCloseCircleSharp } from "react-icons/io5";
-
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 1,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 1,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 1,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-  },
-};
+import Typography from "@/components/typography/Typography";
+import { useGSAP } from "@gsap/react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 type Props = {
   isShowing: boolean;
@@ -37,9 +20,15 @@ const Modal: React.FC<Props> = ({ isShowing, onClose }) => {
   const modalVeil = useRef(null);
   const modalWrapper = useRef(null);
   const modalContent = useRef(null);
-  const [activeTab, setActiveTab] = useState<"property" | "layout">("property");
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [
+    Autoplay({ delay: 4000 }),
+  ]);
+
+
+  useGSAP(() => {
     gsap.set(modalContent.current, { yPercent: -80, xPercent: -50 });
     tl.current
       .to(modalVeil.current, 0.1, { autoAlpha: 0.85 })
@@ -66,33 +55,87 @@ const Modal: React.FC<Props> = ({ isShowing, onClose }) => {
   }, [isShowing]);
 
 
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setActiveIndex(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on("select", onSelect);
+    onSelect(); 
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
+
   return (
     <div
-      className="fixed inset-0 w-full h-screen opacity-0 invisible z-50"
+      className="fixed inset-0 w-full h-screen invisible z-50 backdrop-blur-sm"
       ref={modalWrapper}
     >
       <div
-        className="absolute mx-auto items-center top-1/2 left-1/2 w-full  rounded-3xl opacity-0 invisible z-10"
+        className="absolute mx-auto top-[45%] left-1/2 w-full opacity-0 z-10"
         ref={modalContent}
       >
-        {/* Content Area */}
         <div className="relative">
-          <Carousel responsive={responsive}>
-            <PropertyModal details={modalData[0]} />
-            <PropertyModal details={modalData[1]} />
-            <LayoutCard />
-          </Carousel>
+          <div className="embla" ref={emblaRef}>
+            <div className="embla__container">
+              <div className="embla__slide">
+                <PropertyModal details={modalData[0]} />
+              </div>
+              <div className="embla__slide">
+                <PropertyModal details={modalData[1]} />
+              </div>
+              <div className="embla__slide">
+                <LayoutCard />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <button
-        className="absolute top-4 right-4 text-black rounded-full  z-20"
+        className="absolute top-4 right-4 text-black rounded-full z-20"
         onClick={onClose}
       >
-       <IoCloseCircleSharp className="text-3xl" />
+        <IoCloseCircleSharp className="text-3xl" />
       </button>
-
+      <div className="absolute bottom-5 z-20 w-full flex flex-row gap-2 px-48 py-2">
+        {modalTabs.map((tab, index) => (
+          <div
+            key={index}
+            className="flex flex-row items-center relative py-2 pr-20"
+          >
+            <Typography
+              variant="bulletTitle"
+              className={activeIndex === index ? "text-white" : "text-gray-400"}
+            >
+              {`${tab.id.toString().padStart(2, "0")}.`}
+            </Typography>
+            <Typography
+              variant="bulletTitle"
+              className={activeIndex === index ? "text-white" : "text-gray-400"}
+            >
+              {tab.name}
+            </Typography>
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-400 rounded-full">
+              {activeIndex === index &&
+                isShowing && ( 
+                  <div
+                    className="absolute bottom-0 left-0 h-1 w-full bg-white rounded-full animate-progress"
+                    // style={{
+                    //   width: "100%",
+                    //   animation: "progress 4s linear forwards",
+                    // }}
+                  ></div>
+                )}
+            </div>
+          </div>
+        ))}
+      </div>
       <div
-        className="absolute inset-0 w-full h-full bg-gray-400 opacity-0 invisible z-0"
+        className="absolute inset-0 w-full h-full bg-black/50 opacity-0 invisible z-0"
         ref={modalVeil}
         onClick={onClose}
       />

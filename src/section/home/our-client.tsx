@@ -19,7 +19,7 @@ const OurClient = () => {
   const imagesRef = useRef(null);
   const spanRef = useRef(null);
   const detailRef = useRef(null);
-  const textRef = useRef(null)
+  const textRef = useRef(null);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -109,24 +109,22 @@ const OurClient = () => {
         tl.from(
           textRef.current,
           {
-            y: 50, 
+            y: 50,
             opacity: 0,
             duration: 3,
             ease: "power2.out",
           },
-          "<" 
+          "<"
         );
       }
     },
-    { scope: clientRef }
+    { dependencies: [currentIndex], scope: clientRef }
   );
 
   return (
     <div className="bg-white py-16" ref={clientRef}>
       <div className="max-w-7xl mx-auto">
-        <TextReveal variant="clientTitle">
-          What Our Clients Say
-        </TextReveal>
+        <TextReveal variant="clientTitle">What Our Clients Say</TextReveal>
         <div className="grid grid-cols-2 py-10">
           <div className="flex" ref={imagesRef}>
             <FiArrowRight className="text-black size-7 mr-8" />

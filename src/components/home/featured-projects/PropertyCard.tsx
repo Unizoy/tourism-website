@@ -121,7 +121,6 @@ const PropertyCard = ({ property }: Props) => {
         </div>
       </div>
       
-      {/* Use the new carousel modal component */}
       <Modal isShowing={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );

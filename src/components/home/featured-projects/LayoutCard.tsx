@@ -9,7 +9,7 @@ type Props = {
 };
 const LayoutCard = () => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 z-50">
+    <div className="inset-0 flex items-center justify-center bg-opacity-50 z-50">
       <div className="max-w-5xl w-full bg-white rounded-3xl overflow-hidden flex  flex-col relative px-6 py-8">
         <div className="flex justify-between items-center w-full mb-10">
           <Typography variant="mainTitle">Building Layout</Typography>
@@ -63,12 +63,12 @@ const LayoutCard = () => {
             </div>
 
             <div className="mt-auto space-y-3">
-              <ButtonAnimation className="bg-black text-white rounded-full px-5 py-3 flex items-center justify-center">
+              <Button className="bg-black text-white rounded-full px-5 py-3 flex items-center justify-center">
                 Call Back
-              </ButtonAnimation>
-              <ButtonAnimation className="text-black border border-gray-300 rounded-full px-6 py-3 w-full flex items-center justify-center">
+              </Button>
+              <Button className="text-black border border-gray-300 rounded-full px-6 py-3 w-full flex items-center justify-center">
                 Download Catalog
-              </ButtonAnimation>
+              </Button>
             </div>
           </div>
         </div>

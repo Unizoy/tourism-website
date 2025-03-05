@@ -6,8 +6,9 @@ import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 const cardImage = [
   { id: 1, src: "/who-we-are/img1.png" },
@@ -17,66 +18,58 @@ const cardImage = [
 ];
 
 const WhoWeAre = () => {
-  const containerRef = useRef(null);
-  useGSAP(() => {
-    gsap.fromTo(
-      ".odd",
-      { y: "-150%", opacity: 0 },
-      {
-        y: "0%",
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-        delay: 2,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top center",
-          toggleActions: "play none none reset",
-        },
-        onComplete() {
-          gsap.to(".odd", {
-            y: "150%",
-            opacity: 0,
-            duration: 1,
-            delay: 2,
-            ease: "power2.inOut",
-          });
-        },
-      }
-    );
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardContainerRef = useRef<HTMLDivElement>(null);
 
-    gsap.fromTo(
-      ".even",
-      { y: "150%", opacity: 0 },
-      {
-        y: "0%",
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-        delay: 2,
+  useGSAP(
+    () => {
+      if (!containerRef.current || !cardContainerRef.current) return;
+
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top center",
-          toggleActions: "play none none reset",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+          markers: false,
         },
-        onComplete() {
-          gsap.to(".even", {
-            y: "-150%",
-            opacity: 0,
-            duration: 1,
-            delay: 2,
-            ease: "power2.inOut",
-          });
-        },
-      }
-    );
-  }, []);
+      });
+
+      tl.fromTo(
+        ".odd",
+        { y: "150%", opacity: 0 }, 
+        { y: "0%", opacity: 1, duration: 3, ease: "power2.out" }
+      ).fromTo(
+        ".even",
+        { y: "-150%", opacity: 0 },
+        { y: "0%", opacity: 1, duration: 3, ease: "power2.out" },
+        "<"
+      );
+
+      tl.to(".odd", {
+        y: "-150%",
+        opacity: 0,
+        duration: 3,
+        ease: "power2.in",
+      }).to(
+        ".even",
+        { y: "150%", opacity: 0, duration: 3, ease: "power2.in" },
+        "<" 
+      );
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <div className="bg-white min-h-screen py-6 md:pt-20 relative">
+    <div
+      className="bg-white relative py-20 min-h-screen overflow-hidden"
+      ref={containerRef}
+    >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center relative z-0">
-          <p className="text-base uppercase  text-red-500 mb-4 font-sans">
+        <div className="text-center relative z-10">
+          <p className="text-base uppercase text-red-500 mb-10 font-sans">
             Who We Are
           </p>
           <TextReveal
@@ -96,18 +89,19 @@ const WhoWeAre = () => {
             </ButtonAnimation>
           </div>
         </div>
+
         <div
-          className="absolute inset-0 flex flex-wrap justify-center items-center z-10 gap-20 mb-40"
-          ref={containerRef}
+          className="absolute inset-0 flex flex-wrap justify-center items-center z-10 gap-20 mb-20"
+          ref={cardContainerRef}
         >
           {cardImage.map((image) => (
             <Image
               src={image.src}
               key={image.id}
-              alt="who-we-are"
+              alt={`who-we-are-${image.id}`}
               width={180}
               height={200}
-              className={image.id % 2 === 0 ? "even" : "odd"}
+              className={`${image.id % 2 === 0 ? "even" : "odd"}`}
             />
           ))}
         </div>

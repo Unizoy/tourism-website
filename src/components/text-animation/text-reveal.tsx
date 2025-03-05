@@ -64,7 +64,7 @@ const TextReveal: React.FC<TextRevealProps> = ({
     <div ref={containerRef} className={cn("overflow-hidden", className)}>
       <Typography variant={variant} as={as} className="inline-block opacity-1" ref={lineRef}>
         {children.split(" ").map((word, index) => (
-          <span key={index} className="word inline-block">
+          <span key={index} className="word inline-block py-3">
             {word}&nbsp;
           </span>
         ))}

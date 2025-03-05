@@ -6,8 +6,8 @@ import { ButtonAnimation } from "@/components/text-animation/button-animation";
 
 const PropertyModal = ({ details }) => {
   return (
-    <div className="inset-0 flex items-center justify-center bg-opacity-50 z-50 py-4">
-       <div className="max-w-5xl w-full bg-white rounded-3xl p-3 overflow-hidden flex flex-col md:flex-row relative">
+    <div className="inset-0 flex items-center justify-center bg-opacity-50 z-50">
+       <div className="max-w-5xl w-full bg-white rounded-3xl p-3 overflow-hidden flex flex-row relative">
         {/* Property Image */}
         <div className="md:w-2/5">
           <Image
@@ -61,12 +61,12 @@ const PropertyModal = ({ details }) => {
           </div>
 
           <div className="flex space-x-3">
-            <ButtonAnimation className="bg-black text-white px-6 py-2 rounded-full" variant='cardDetails'>
+            <Button className="bg-black text-white px-6 py-2 rounded-full" variant='cardDetails'>
               Call Back
-            </ButtonAnimation>
-            <ButtonAnimation className="bg-white text-black px-6 py-2 rounded-full border border-black" variant='cardDetails'>
+            </Button>
+            <Button className="bg-white text-black px-6 py-2 rounded-full border border-black" variant='cardDetails'>
               Download Catalog
-            </ButtonAnimation>
+            </Button>
           </div>
         </div>
       </div>
