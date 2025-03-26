@@ -54,28 +54,40 @@ const Blog = () => {
   );
 
   return (
-    <div className="bg-white px-4 md:px-8" ref={containerRef}>
+    <div className="bg-white px-4 sm:px-6 lg:px-8" ref={containerRef}>
       <div className="max-w-7xl mx-auto">
         <div className="mb-4">
           <Typography as="p" variant="bulletTitle">
             &bull; Blog
           </Typography>
         </div>
-        <div className="flex justify-between items-center mb-8">
-          <TextReveal as="h1" variant="heading1">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+          <TextReveal
+            as="h1"
+            variant="heading1"
+            className="text-center md:text-left"
+          >
             Latest Insights
           </TextReveal>
-          <ButtonAnimation variant="commonButton">View All</ButtonAnimation>
+          <ButtonAnimation
+            variant="commonButton"
+            className="w-full md:w-auto text-center"
+          >
+            View All
+          </ButtonAnimation>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="flex justify-around w-full mb-10" ref={tabButtonRef}>
+      <div
+        className="flex flex-wrap justify-center md:justify-around w-full mb-10 gap-4"
+        ref={tabButtonRef}
+      >
         {categories.map((category) => (
           <button
             key={category.id}
             onClick={() => setActiveTab(category.id)}
-            className="relative bg-transparent tab-button"
+            className="relative bg-transparent tab-button px-3 py-2"
             style={{ WebkitTapHighlightColor: "transparent" }}
           >
             {activeTab === category.id && (
@@ -86,7 +98,7 @@ const Blog = () => {
                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
               />
             )}
-            <Typography variant="heading2">
+            <Typography variant="heading2" className="text-center">
               {category.label}
               <sup className="ml-1 text-xs md:text-base text-gray-500">
                 {category.count} Articles
@@ -97,8 +109,8 @@ const Blog = () => {
       </div>
 
       {/* Blog Cards */}
-      <div className="px-8" ref={blogCardsRef}>
-        <div className="mt-8 grid md:grid-cols-2 gap-10">
+      <div className="px-4 sm:px-6 lg:px-8" ref={blogCardsRef}>
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
           {activeInsights.map((insight) => (
             <div key={insight.id} className="blog-card">
               <BlogCard insight={insight} />

@@ -7,7 +7,7 @@ import { RiSendPlaneFill } from "react-icons/ri";
 const Footer = () => {
   return (
     <footer className="bg-[#f2f2f2]  py-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
         {/* logo */}
 
         <div className="space-y-8 font-sans">

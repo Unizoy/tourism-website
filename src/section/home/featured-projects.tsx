@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useRef } from "react";
 import { Button } from "@/components/custom-ui/Button";
 import Typography from "@/components/typography/Typography";
@@ -31,9 +31,9 @@ const FeaturedProjects = () => {
 
   return (
     <div className="min-h-screen bg-white pb-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-6">
-          <div className="space-y-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+          <div className="space-y-2 text-center md:text-left">
             <Typography variant="bulletTitle" className="sub-button">
               &bull; Recent AI Driven Recommendations
             </Typography>
@@ -45,37 +45,52 @@ const FeaturedProjects = () => {
               Featured Projects
             </TextReveal>
           </div>
-          <div className="text-gray-600">
+          <div className="text-gray-600 mt-4 md:mt-0">
             <Typography as="h1" variant="featuredMainTitle" className="ml-2">
               <CountUp end={456} />
               <sup className="ml-1 text-xs text-gray-500">Offers</sup>
             </Typography>
           </div>
         </div>
+
         {/* filter */}
-        <div className="flex justify-between mb-8" ref={subButtonRef}>
-          <div className="flex md:gap-36">
-            <Button variant="filterButton" className="sub-button">
-              Filter
-              <BsFilter />
+        <div
+          className="flex flex-wrap justify-between items-center mb-8 gap-4"
+          ref={subButtonRef}
+        >
+          <div className="flex flex-wrap gap-4 md:gap-6">
+            <Button
+              variant="filterButton"
+              className="sub-button flex items-center gap-2"
+            >
+              Filter <BsFilter />
             </Button>
-            <Button variant="filterButton" className="sub-button">
-              Buy
-              <IoIosArrowRoundDown />
+            <Button
+              variant="filterButton"
+              className="sub-button flex items-center gap-2"
+            >
+              Buy <IoIosArrowRoundDown />
             </Button>
-            <Button variant="filterButton" className="sub-button">
+            <Button
+              variant="filterButton"
+              className="sub-button flex items-center gap-2"
+            >
               Any Property <IoIosArrowRoundDown />
             </Button>
-            <Button variant="filterButton" className="sub-button">
+            <Button
+              variant="filterButton"
+              className="sub-button flex items-center gap-2"
+            >
               All Areas <IoIosArrowRoundDown />
             </Button>
           </div>
-          <div>
+          <div className="w-full md:w-auto flex justify-center md:justify-end">
             <ButtonAnimation variant="commonButton">View All</ButtonAnimation>
           </div>
         </div>
+
         {/* cards */}
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2  gap-6">
           {properties.map((property) => (
             <PropertyCard property={property} key={property.id} />
           ))}

@@ -122,24 +122,34 @@ const OurClient = () => {
   );
 
   return (
-    <div className="bg-white py-16" ref={clientRef}>
+    <div className="bg-white py-16 px-4 sm:px-6 lg:px-8" ref={clientRef}>
       <div className="max-w-7xl mx-auto">
-        <TextReveal variant="clientTitle">What Our Clients Say</TextReveal>
-        <div className="grid grid-cols-2 py-10">
-          <div className="flex" ref={imagesRef}>
-            <FiArrowRight className="text-black size-7 mr-8" />
-            {reorderedData.map((data) => (
-              <div key={data.id} className="client-image">
-                <Image
-                  src={data.image}
-                  alt={data.id.toString()}
-                  width={35}
-                  height={10}
-                />
-              </div>
-            ))}
-            <Typography variant="heading1">
-              125+{" "}
+        <TextReveal variant="clientTitle" className="text-center">
+          What Our Clients Say
+        </TextReveal>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-10">
+          <div
+            className="flex flex-col md:flex-row items-center md:items-start"
+            ref={imagesRef}
+          >
+            <FiArrowRight className="text-black size-7 mr-8 hidden md:block" />
+            <div className="flex flex-wrap justify-center md:justify-start gap-2">
+              {reorderedData.map((data) => (
+                <div key={data.id} className="client-image">
+                  <Image
+                    src={data.image}
+                    alt={data.id.toString()}
+                    width={35}
+                    height={10}
+                  />
+                </div>
+              ))}
+            </div>
+            <Typography
+              variant="heading1"
+              className="mt-4 md:mt-0 text-center md:text-left"
+            >
+              125+
               <span
                 className="text-gray-400 text-lg inline-block"
                 ref={spanRef}
@@ -148,8 +158,11 @@ const OurClient = () => {
               </span>
             </Typography>
           </div>
-          <div className="flex gap-4" ref={detailRef}>
-            <div>
+          <div
+            className="flex flex-col md:flex-row items-center md:items-start gap-4"
+            ref={detailRef}
+          >
+            <div className="hidden md:block">
               <Image
                 src="/client-section/comment.png"
                 alt="comment"
@@ -157,7 +170,7 @@ const OurClient = () => {
                 height={10}
               />
             </div>
-            <div>
+            <div className="text-center md:text-left">
               <Typography
                 variant="heading2"
                 className="border-b pb-8"
@@ -165,8 +178,7 @@ const OurClient = () => {
               >
                 {clientData[currentIndex].description}
               </Typography>
-
-              <div className="flex justify-between mt-5">
+              <div className="flex justify-center md:justify-between mt-5 gap-4">
                 <Image
                   src={clientData[currentIndex].image}
                   alt="avatar"
@@ -181,7 +193,6 @@ const OurClient = () => {
                   >
                     <FaArrowRightLong className="text-black w-4 h-4 rotate-180" />
                   </button>
-
                   {/* Right Button */}
                   <button
                     className="bg-gray-300 rounded-full w-8 h-8 flex items-center justify-center"
