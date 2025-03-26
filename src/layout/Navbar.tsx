@@ -1,21 +1,22 @@
-'use client'
+"use client";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import Image from "next/image";
+
 
 gsap.registerPlugin(useGSAP);
 
-
 const Navbar = () => {
-  const navRef = useRef(null)
+  const navRef = useRef(null);
 
-  useGSAP(()=>{
-    gsap.from(navRef.current,{
-      y:-20,
+  useGSAP(() => {
+    gsap.from(navRef.current, {
+      y: -20,
       duration: 1,
       opacity: 0,
-    })
-  })
+    });
+  });
 
   return (
     <nav className="absolute w-full top-0 z-50 bg-transparent" ref={navRef}>
@@ -44,17 +45,15 @@ const Navbar = () => {
             <div>
               <button className="px-4 py-3 gap-2 text-white text-sm bg-white/10 rounded-md flex items-center">
                 EN
-                <img src="/hero-section/icon-arrow.png"></img>
+                <Image src="/hero-section/icon-arrow.png" alt="Arrow Icon" width={20} height={20} />
               </button>
             </div>
             <div className="flex gap-x-2">
               <button className="px-4 py-3 bg-white rounded-md">
-                <img
-                  src="/hero-section/icon-map.png"
-                ></img>
+                <Image src="/hero-section/icon-map.png" alt="map Icon" width={20} height={20} />
               </button>
               <button className="px-4 py-3 bg-white/20 rounded-md items-center border border-white">
-                <img src="/hero-section/icon-list.png"></img>
+                <Image src="/hero-section/icon-list.png" alt="list Icon" width={20} height={20}/>
               </button>
             </div>
           </div>

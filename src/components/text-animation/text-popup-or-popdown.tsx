@@ -3,10 +3,8 @@ import { cn } from "@/utils/cn";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React, { useEffect, useRef } from "react";
-import Typography, {
-  TypographyVariants,
-} from "@/components/typography/Typography";
+import React, {  useRef } from "react";
+import Typography from "@/components/typography/Typography";
 import { TextPopUpOrDownProps } from "@/types/home/types";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -54,6 +52,7 @@ export function TextPopUpOrDown({
           y: animationDistance,
           duration: duration,
           ease: "linear",
+          stagger
         });
 
         if (translateX) {

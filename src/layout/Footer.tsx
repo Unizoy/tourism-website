@@ -33,7 +33,7 @@ const Footer = () => {
               Subscribe To Our News
             </TextPopUpOrDown>
             <TextPopUpOrDown as="p" className="text-gray-500">
-              Lorem Ipsum Has Been The Industry's Standard Dummy Text
+              Lorem Ipsum Has Been The Industry&apos;s Standard Dummy Text
             </TextPopUpOrDown>
             <div className="flex">
               <input
