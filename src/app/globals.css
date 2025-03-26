@@ -24,7 +24,7 @@ body {
   background-image: url('/hero-section/hero-image.png');
 }
 
-.images img{
+.images img {
   transform: 0.5s ease-in-out;
 }
 
@@ -33,21 +33,21 @@ body {
   position: absolute;
   top: 8rem;
   z-index: 10;
-  scale: 1.5;
-  /* transform: scale(1.4); */
+  transform: scale(1.2);
+  animation-duration: 500ms;
 }
 
 .images.state-1 img:nth-child(2) {
   position: absolute;
   top: 16rem;
-  right: 8rem;
+  right: 4rem;
   opacity: 0.6;
 }
 
 .images.state-1 img:nth-child(3) {
   position: absolute;
   top: 0;
-  left: 8rem;
+  left: 4rem;
   opacity: 0.6;
 }
 
@@ -55,7 +55,7 @@ body {
 .images.state-2 img:nth-child(1) {
   position: absolute;
   top: 0;
-  left: 8rem;
+  left: 4rem;
   opacity: 0.6;
 }
 
@@ -63,15 +63,15 @@ body {
   position: absolute;
   top: 8rem;
   z-index: 10;
-  scale: 1.5;
-  /* transform: scale(1.4); */
-
+  /* scale: 1.5; */
+  transform: scale(1.2);
+  animation-duration: 500ms;
 }
 
 .images.state-2 img:nth-child(3) {
   position: absolute;
   top: 16rem;
-  right: 8rem;
+  right: 4rem;
   opacity: 0.6;
 }
 
@@ -79,14 +79,14 @@ body {
 .images.state-3 img:nth-child(1) {
   position: absolute;
   top: 16rem;
-  right: 8rem;
+  right: 4rem;
   opacity: 0.6;
 }
 
 .images.state-3 img:nth-child(2) {
   position: absolute;
   top: 0;
-  left: 8rem;
+  left: 4rem;
   opacity: 0.6;
 }
 
@@ -94,13 +94,16 @@ body {
   position: absolute;
   top: 8rem;
   z-index: 10;
-  scale: 1.5;
-  /* transform: scale(1.4); */
+  /* scale: 1.5; */
+  transform: scale(1.2);
+  animation-duration: 500ms;
 }
+
 @keyframes progress {
   from {
     width: 0%;
   }
+
   to {
     width: 100%;
   }
@@ -113,9 +116,11 @@ body {
 .embla {
   overflow: hidden;
 }
+
 .embla__container {
   display: flex;
 }
+
 .embla__slide {
   flex: 0 0 100%;
   /* min-width: 0; */
