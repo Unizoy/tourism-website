@@ -68,3 +68,19 @@ export interface ButtonAnimationProps {
   duration?: number;
   playOnLoad?: boolean;
 }
+
+export interface PropertyDetail {
+  label: string;
+  value: string;
+}
+
+export interface PropertyModalData {
+  id: string;
+  location: string;
+  type: string;
+  developer: string;
+  title: string;
+  details: PropertyDetail[];
+  price: string;
+  image: string;
+}

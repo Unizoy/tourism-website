@@ -3,6 +3,7 @@ import {
   PropertyCard,
   ClientData,
   Leader,
+  PropertyModalData,
 } from "@/types/home/types";
 
 export const categories = [
@@ -163,7 +164,7 @@ export const clientData: ClientData[] = [
   },
 ];
 
-export const modalData = [
+export const modalData: PropertyModalData[] = [
   {
     id: "03",
     location: "Location Name",
