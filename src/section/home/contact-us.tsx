@@ -22,7 +22,7 @@ const ContactUs = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
     reset,
   } = useForm<ContactFormValues>();
 

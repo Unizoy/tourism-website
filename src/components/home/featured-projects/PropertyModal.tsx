@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Typography from "@/components/typography/Typography";
 import { Button } from "@/components/custom-ui/Button";
-import { ButtonAnimation } from "@/components/text-animation/button-animation";
+import { PropertyModalData } from "@/types/home/types";
 
-const PropertyModal = ({ details }) => {
+const PropertyModal = ({ details }: { details: PropertyModalData }) => {
   return (
     <div className="inset-0 flex items-center justify-center bg-opacity-50 z-50">
        <div className="max-w-5xl w-full bg-white rounded-3xl p-3 overflow-hidden flex flex-row relative">

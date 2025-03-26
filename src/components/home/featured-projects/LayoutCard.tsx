@@ -1,12 +1,9 @@
 import { Button } from "@/components/custom-ui/Button";
 import Typography from "@/components/typography/Typography";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { ButtonAnimation } from "@/components/text-animation/button-animation";
-type Props = {
-  isShowing: boolean;
-  onClose: () => void;
-};
+
+
 const LayoutCard = () => {
   return (
     <div className="inset-0 flex items-center justify-center bg-opacity-50 z-50">
@@ -32,7 +29,7 @@ const LayoutCard = () => {
               <Typography variant='heading1' className="mb-4  border-b">Ground Floor</Typography>
               <Typography variant='heading1' className="text-gray-600 max-w-md text-lg mt-1">
                 Is Simply Dummy Text Of The Printing And Typesetting Industry.
-                Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever
+                Lorem Ipsum Has Been The Industry&lsquo;s Standard Dummy Text Ever
                 Since The 1500s
               </Typography>
             </div>

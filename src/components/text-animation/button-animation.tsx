@@ -44,6 +44,7 @@ export function ButtonAnimation({
         scaleX: 0,
         duration,
         delay,
+        stagger,
         ease: "power3.out",
       });
 

@@ -2,7 +2,7 @@
 import BlogCard from "@/components/home/BlogCards";
 import Typography from "@/components/typography/Typography";
 import { Category } from "@/types/home/types";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { categories, insights } from "../../../data";
 import { motion } from "framer-motion";
 import { ButtonAnimation } from "@/components/text-animation/button-animation";
