@@ -28,76 +28,95 @@ body {
   transform: 0.5s ease-in-out;
 }
 
-/* state1 */
-.images.state-1 img:nth-child(1) {
-  position: absolute;
-  top: 8rem;
-  z-index: 10;
-  transform: scale(1.2);
-  animation-duration: 500ms;
+.images img {
+  transform: 0.5s ease-in-out;
 }
 
-.images.state-1 img:nth-child(2) {
-  position: absolute;
-  top: 16rem;
-  right: 4rem;
-  opacity: 0.6;
+
+
+.mobile-image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
 }
 
-.images.state-1 img:nth-child(3) {
-  position: absolute;
-  top: 0;
-  left: 4rem;
-  opacity: 0.6;
+.mobile-image img {
+  position: relative !important;
 }
 
-/* state2 */
-.images.state-2 img:nth-child(1) {
-  position: absolute;
-  top: 0;
-  left: 4rem;
-  opacity: 0.6;
+@media (min-width: 1024px) {
+
+  /* state1 */
+  .images.state-1 img:nth-child(1) {
+    position: absolute;
+    top: 8rem;
+    z-index: 10;
+    transform: scale(1.2);
+    animation-duration: 500ms;
+  }
+
+  .images.state-1 img:nth-child(2) {
+    position: absolute;
+    top: 16rem;
+    right: 4rem;
+    opacity: 0.6;
+  }
+
+  .images.state-1 img:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 4rem;
+    opacity: 0.6;
+  }
+
+  /* state2 */
+  .images.state-2 img:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 4rem;
+    opacity: 0.6;
+  }
+
+  .images.state-2 img:nth-child(2) {
+    position: absolute;
+    top: 8rem;
+    z-index: 10;
+    transform: scale(1.2);
+    animation-duration: 500ms;
+  }
+
+  .images.state-2 img:nth-child(3) {
+    position: absolute;
+    top: 16rem;
+    right: 4rem;
+    opacity: 0.6;
+  }
+
+  /* state3 */
+  .images.state-3 img:nth-child(1) {
+    position: absolute;
+    top: 16rem;
+    right: 4rem;
+    opacity: 0.6;
+  }
+
+  .images.state-3 img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 4rem;
+    opacity: 0.6;
+  }
+
+  .images.state-3 img:nth-child(3) {
+    position: absolute;
+    top: 8rem;
+    z-index: 10;
+    transform: scale(1.2);
+    animation-duration: 500ms;
+  }
 }
 
-.images.state-2 img:nth-child(2) {
-  position: absolute;
-  top: 8rem;
-  z-index: 10;
-  /* scale: 1.5; */
-  transform: scale(1.2);
-  animation-duration: 500ms;
-}
-
-.images.state-2 img:nth-child(3) {
-  position: absolute;
-  top: 16rem;
-  right: 4rem;
-  opacity: 0.6;
-}
-
-/* state3 */
-.images.state-3 img:nth-child(1) {
-  position: absolute;
-  top: 16rem;
-  right: 4rem;
-  opacity: 0.6;
-}
-
-.images.state-3 img:nth-child(2) {
-  position: absolute;
-  top: 0;
-  left: 4rem;
-  opacity: 0.6;
-}
-
-.images.state-3 img:nth-child(3) {
-  position: absolute;
-  top: 8rem;
-  z-index: 10;
-  /* scale: 1.5; */
-  transform: scale(1.2);
-  animation-duration: 500ms;
-}
 
 @keyframes progress {
   from {

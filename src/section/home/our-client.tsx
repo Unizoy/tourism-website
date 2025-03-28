@@ -41,57 +41,27 @@ const OurClient = () => {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: clientRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reset",
-        },
-      });
-
-      if (headingRef.current) {
-        const heading = headingRef.current;
-        const words = (heading.textContent || "")
-          .split(" ")
-          .map((word) => `<span class="word inline-block">${word}</span>`)
-          .join(" ");
-        heading.innerHTML = words;
-
-        tl.from(".word", {
-          yPercent: 100,
+      if (spanRef.current || imagesRef.current) {
+        gsap.from([spanRef.current, ...gsap.utils.toArray(".client-image")], {
+          x: -100,
           opacity: 0,
           duration: 1,
           stagger: 0.2,
-          ease: "back.out",
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: clientRef.current,
+            start: "top 80%",
+            once: true,
+          },
         });
       }
+    },
+    { scope: clientRef }
+  );
 
-      if (spanRef.current) {
-        tl.from(
-          spanRef.current,
-          {
-            x: 100,
-            opacity: 0,
-            duration: 1,
-            ease: "power2.out",
-          },
-          "<"
-        );
-      }
-
-      if (imagesRef.current) {
-        tl.from(
-          gsap.utils.toArray(".client-image"),
-          {
-            x: -100,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-            ease: "power2.out",
-          },
-          "<"
-        );
-      }
+  useGSAP(
+    () => {
+      const tl = gsap.timeline();
 
       if (detailRef.current) {
         tl.from(
@@ -105,6 +75,7 @@ const OurClient = () => {
           "<"
         );
       }
+
       if (textRef.current) {
         tl.from(
           textRef.current,
@@ -133,7 +104,7 @@ const OurClient = () => {
             ref={imagesRef}
           >
             <FiArrowRight className="text-black size-7 mr-8 hidden md:block" />
-            <div className="flex flex-wrap justify-center md:justify-start gap-2">
+            <div className="flex flex-wrap justify-center md:justify-start">
               {reorderedData.map((data) => (
                 <div key={data.id} className="client-image">
                   <Image

@@ -45,7 +45,7 @@ const FeaturedProjects = () => {
               Featured Projects
             </TextReveal>
           </div>
-          <div className="text-gray-600 mt-4 md:mt-0">
+          <div className="text-gray-600 mt-4 md:mt-0 text-center md:text-left">
             <Typography as="h1" variant="featuredMainTitle" className="ml-2">
               <CountUp end={456} />
               <sup className="ml-1 text-xs text-gray-500">Offers</sup>
@@ -55,42 +55,47 @@ const FeaturedProjects = () => {
 
         {/* filter */}
         <div
-          className="flex flex-wrap justify-between items-center mb-8 gap-4"
+          className="flex flex-col md:flex-row flex-wrap justify-between items-center mb-8 gap-4"
           ref={subButtonRef}
         >
-          <div className="flex flex-wrap gap-4 md:gap-6">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6 w-full md:w-auto">
             <Button
               variant="filterButton"
-              className="sub-button flex items-center gap-2"
+              className="sub-button flex items-center gap-2 w-full sm:w-auto"
             >
               Filter <BsFilter />
             </Button>
             <Button
               variant="filterButton"
-              className="sub-button flex items-center gap-2"
+              className="sub-button flex items-center gap-2 w-full sm:w-auto"
             >
               Buy <IoIosArrowRoundDown />
             </Button>
             <Button
               variant="filterButton"
-              className="sub-button flex items-center gap-2"
+              className="sub-button flex items-center gap-2 w-full sm:w-auto"
             >
               Any Property <IoIosArrowRoundDown />
             </Button>
             <Button
               variant="filterButton"
-              className="sub-button flex items-center gap-2"
+              className="sub-button flex items-center gap-2 w-full sm:w-auto"
             >
               All Areas <IoIosArrowRoundDown />
             </Button>
           </div>
           <div className="w-full md:w-auto flex justify-center md:justify-end">
-            <ButtonAnimation variant="commonButton">View All</ButtonAnimation>
+            <ButtonAnimation
+              variant="commonButton"
+              className="w-full sm:w-auto"
+            >
+              View All
+            </ButtonAnimation>
           </div>
         </div>
 
         {/* cards */}
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2  gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6">
           {properties.map((property) => (
             <PropertyCard property={property} key={property.id} />
           ))}

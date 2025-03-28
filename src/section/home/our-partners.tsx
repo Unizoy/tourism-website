@@ -1,7 +1,7 @@
 import InfiniteScroll from "@/components/home/InfiniteScroll";
 
 const OurPartners = () => (
-  <div className="bg-white py-4 md:py-8">
+  <div className="bg-white py-8 md:py-16">
     <div className=" text-center">
       <h1 className="font-sans text-4xl text-black font-normal">
         Our Valued Parteners

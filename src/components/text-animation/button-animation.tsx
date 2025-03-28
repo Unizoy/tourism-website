@@ -21,38 +21,70 @@ export function ButtonAnimation({
 }: ButtonAnimationProps & React.ButtonHTMLAttributes<HTMLButtonElement>) {
   const containerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef(null)
+  const hasAnimated = useRef(false)
   const tl = useRef<gsap.core.Timeline | null>(null);
 
+  // useGSAP(() => {
+  //   if (containerRef.current) {
+  //     tl.current = gsap.timeline({
+  //       delay,
+  //       ...(playOnLoad
+  //         ? {}
+  //         : {
+  //             scrollTrigger: {
+  //               trigger: containerRef.current,
+  //               start,
+  //               end,
+  //               toggleActions: "play none none reverse",
+  //             },
+  //           }),
+  //     });
+
+  //     tl.current.from(containerRef.current, {
+  //       opacity: 0,
+  //       scaleX: 0,
+  //       duration,
+  //       delay,
+  //       stagger,
+  //       ease: "power3.out",
+  //     });
+
+  //     tl.current.from(lineRef.current,{
+  //       opacity:0
+  //     })
+  //   }
+  // }, [[containerRef.current]]);
+
   useGSAP(() => {
-    if (containerRef.current) {
-      tl.current = gsap.timeline({
-        delay,
-        ...(playOnLoad
-          ? {}
-          : {
-              scrollTrigger: {
-                trigger: containerRef.current,
-                start,
-                end,
-                toggleActions: "play none none reverse",
-              },
-            }),
-      });
+    if (!containerRef.current || hasAnimated.current) return;
 
-      tl.current.from(containerRef.current, {
-        opacity: 0,
-        scaleX: 0,
-        duration,
-        delay,
-        stagger,
-        ease: "power3.out",
-      });
+    const tl = gsap.timeline({
+      delay,
+      ...(playOnLoad
+        ? {}
+        : {
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start,
+              end,
+              toggleActions: "play none none reverse",
+            },
+          }),
+    });
 
-      tl.current.from(lineRef.current,{
-        opacity:0
-      })
-    }
-  }, [[containerRef.current]]);
+    tl.from(containerRef.current, {
+      opacity: 0,
+      scaleX: 0,
+      duration,
+      delay,
+      stagger,
+      ease: "power3.out",
+    });
+
+    tl.from(lineRef.current, { opacity: 0 });
+
+    hasAnimated.current = true;
+  }, []);
 
   return (
     <div ref={containerRef}>

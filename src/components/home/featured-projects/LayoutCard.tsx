@@ -3,67 +3,98 @@ import Typography from "@/components/typography/Typography";
 import React from "react";
 import Image from "next/image";
 
-
 const LayoutCard = () => {
   return (
-    <div className="inset-0 flex items-center justify-center bg-opacity-50 z-50">
-      <div className="max-w-5xl w-full bg-white rounded-3xl overflow-hidden flex  flex-col relative px-6 py-8">
-        <div className="flex justify-between items-center w-full mb-10">
-          <Typography variant="mainTitle">Building Layout</Typography>
+    <div className="inset-0 flex items-center justify-center bg-opacity-50 z-50 px-4">
+      <div className="max-w-5xl w-full bg-white rounded-3xl overflow-hidden flex flex-col relative p-2 sm:p-4">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row justify-between items-center w-full mb-6 sm:mb-10 space-y-1 sm:space-y-0">
+          <Typography variant="mainTitle" className="text-base sm:text-2xl">
+            Building Layout
+          </Typography>
           <div className="flex space-x-2">
-            <Button variant="cardDetails">Ground Floor</Button>
+            <Button variant="cardDetails" className="">
+              Ground Floor
+            </Button>
             <Button variant="cardDetails" className="bg-gray-200 px-4">
               First Floor
             </Button>
           </div>
         </div>
-        <div className="flex flex-row justify-between">
+
+        {/* Main Content */}
+        <div className="flex flex-col lg:flex-row justify-between space-y-6 lg:space-y-0 lg:space-x-6">
           {/* Left side - Area info */}
-          <div className="mb-6 space-y-36">
-            <div className="mb-8">
-              <Typography variant='heading1' className="text-gray-500 mb-1">Area</Typography>
-              <Typography variant='heading1'>3037m²</Typography>
+          <div className="w-full lg:w-1/4 space-y-2 lg:space-y-24 text-center lg:text-left">
+            <div className="mb-2 lg:mb-8">
+              <Typography
+                variant="heading1"
+                className="text-gray-500 mb-1 text-base md:text-2xl"
+              >
+                Area
+              </Typography>
+              <Typography variant="heading1" className="text-base md:text-2xl">
+                3037m²
+              </Typography>
             </div>
 
             <div>
-              <Typography variant='heading1' className="mb-4  border-b">Ground Floor</Typography>
-              <Typography variant='heading1' className="text-gray-600 max-w-md text-lg mt-1">
+              <Typography
+                variant="heading1"
+                className="mb-2 border-b text-base md:text-2xl"
+              >
+                Ground Floor
+              </Typography>
+              <Typography
+                variant="heading1"
+                className="text-gray-600 text-sm md:text-xl mt-1 text-justify"
+              >
                 Is Simply Dummy Text Of The Printing And Typesetting Industry.
-                Lorem Ipsum Has Been The Industry&lsquo;s Standard Dummy Text Ever
-                Since The 1500s
+                Lorem Ipsum Has Been The Industry&lsquo;s Standard Dummy Text
+                Ever Since The 1500s
               </Typography>
             </div>
           </div>
 
           {/* Middle - Floor plan image */}
-          <div className="mb-6 flex-1 mr-14">
+          <div className="w-full lg:w-1/2 flex justify-center lg:mr-14">
             <Image
               src="/image-49.png"
-              width={500}
-              height={500}
+              width={400}
+              height={400}
               alt="Floor Plan"
-              className="w-full border border-gray-200"
+              className="w-full h-[160px] md:h-[300px] lg:h-[350px] object-cover rounded-3xl"
             />
           </div>
 
           {/* Right side - Floor tabs and info boxes */}
-          <div className="flex flex-col">
-            <div className="grid grid-cols-2 gap-4 my-16">
-              <div className=''>
-                <Typography className="text-gray-500 text-sm">Text Here</Typography>
-                <Typography className="text-black text-2xl font-medium">3</Typography>
-              </div>
-              <div className="">
-                <Typography className="text-gray-500 text-sm">Text Here</Typography>
-                <Typography className=" text-black text-2xl font-medium">3</Typography>
-              </div>
+          <div className="w-full lg:w-1/4 flex flex-col">
+            {/* Info Boxes */}
+            <div className="hidden sm:grid grid-cols-2 gap-4 my-2 lg:my-16">
+              {[1, 2].map((item) => (
+                <div key={item} className="text-center lg:text-left">
+                  <Typography className="text-gray-500 text-sm">
+                    Text Here
+                  </Typography>
+                  <Typography className="text-black text-base sm:text-2xl font-medium">
+                    3
+                  </Typography>
+                </div>
+              ))}
             </div>
 
-            <div className="mt-auto space-y-3">
-              <Button className="bg-black text-white rounded-full px-5 py-3 flex items-center justify-center">
+            {/* Buttons */}
+            <div className="flex flex-row sm:flex-col space-y-3">
+              <Button
+                className="bg-black text-white px-6 py-1 rounded-full"
+                variant="cardDetails"
+              >
                 Call Back
               </Button>
-              <Button className="text-black border border-gray-300 rounded-full px-6 py-3 w-full flex items-center justify-center">
+              <Button
+                className="bg-white text-black px-6 py-1 rounded-full border border-black"
+                variant="cardDetails"
+              >
                 Download Catalog
               </Button>
             </div>
