@@ -91,7 +91,7 @@ const WhoWeAre = () => {
         </div>
         
         <div
-          className="absolute inset-0 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12 md:gap-14 justify-center items-center z-10 px-16"
+          className="absolute inset-0 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12 justify-center sm:items-center z-10 px-10 sm:px-32 py-10"
           ref={cardContainerRef}
         >
           {cardImage.map((image) => (

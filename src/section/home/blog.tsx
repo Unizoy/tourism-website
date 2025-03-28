@@ -22,27 +22,34 @@ const Blog = () => {
   const tabButtonRef = useRef<HTMLDivElement | null>(null);
   const blogCardsRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const tabButtonAnimationRef = useRef<GSAPAnimation | null>(null);
+  const blogCardAnimationRef = useRef<GSAPAnimation | null>(null);
+
   useGSAP(
     () => {
-      // Animate Sub-Buttons
-      gsap.from(".tab-button", {
-        opacity: 0,
-        y: 20,
-        duration: 0.8,
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: tabButtonRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      });
+      if (!tabButtonAnimationRef.current) {
+        tabButtonAnimationRef.current = gsap.from(".tab-button", {
+          opacity: 0,
+          y: 20,
+          duration: 0.8,
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: tabButtonRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      }
 
-      // Animate Blog Cards
-      gsap.from(".blog-card", {
+      if (blogCardAnimationRef.current) {
+        blogCardAnimationRef.current.kill();
+      }
+      
+      blogCardAnimationRef.current = gsap.from(".blog-card", {
         opacity: 0,
-        x: 50,
-        duration: 1,
-        stagger: 0.2,
+        x: 250,
+        duration: 0.6,
+        // stagger: 0.2,
         scrollTrigger: {
           trigger: blogCardsRef.current,
           start: "top 85%",
@@ -50,7 +57,7 @@ const Blog = () => {
         },
       });
     },
-    { scope: containerRef }
+    { scope: containerRef, dependencies: [activeTab] }
   );
 
   return (
@@ -109,7 +116,7 @@ const Blog = () => {
       </div>
 
       {/* Blog Cards */}
-      <div className="px-4 sm:px-6 lg:px-8" ref={blogCardsRef}>
+      <div className="px-4 sm:px-6 lg:px-8 overflow-hidden" ref={blogCardsRef}>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
           {activeInsights.map((insight) => (
             <div key={insight.id} className="blog-card">
