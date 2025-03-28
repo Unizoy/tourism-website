@@ -34,7 +34,7 @@ const PropertyCard = ({ property }: Props) => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: cardRef.current,
-            start: "top 80%", // Trigger animation when 80% of the card is visible
+            start: "top 80%",
             toggleActions: "play none none reverse",
           },
         }
@@ -65,7 +65,7 @@ const PropertyCard = ({ property }: Props) => {
   return (
     <div
       ref={cardRef}
-      className="relative rounded-3xl w-full h-[650px] group overflow-hidden"
+      className="relative rounded-3xl w-full h-[500px] sm:h-[650px] group overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -78,24 +78,24 @@ const PropertyCard = ({ property }: Props) => {
           alt={property.title}
           width={300}
           height={200}
-          className="w-full h-[650px] object-cover rounded-3xl bottom-0 absolute"
+          className="w-full h-full sm:h-[650px] object-cover rounded-3xl bottom-0 absolute"
         />
       </div>
-      <div className="absolute top-10 left-10 right-10 flex items-center justify-between">
+      <div className="absolute top-5 sm:top-10 left-5 sm:left-10 right-5 sm:right-10 flex items-center justify-between">
         <Button
           variant="locationButton"
-          className="border-2 border-white group-hover:border-black group-hover:text-black transition-all duration-300"
+          className="border-2 border-white group-hover:border-black group-hover:text-black transition-all duration-300 text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2"
         >
           <IoLocationOutline size={25} />
           Location Name
         </Button>
-        <button className="p-3 bg-transparent/10 rounded-full border-2 border-white">
-          <GoArrowUpRight className="w-8 h-8 text-white" />
+        <button className="p-2 sm:p-3 bg-transparent/10 rounded-full border-2 border-white">
+          <GoArrowUpRight className="w-6 sm:w-8 h-6 sm:h-8 text-white" />
         </button>
       </div>
-      <div className="absolute top-[16%] left-0 right-0 z-0 hidden group-hover:block transition-all duration-300">
-        <div className="border-t border-[#9DD1FE] left-10 right-10 flex items-center justify-between mt-2">
-          <Typography variant="hoverTitle" className="px-10 py-5">
+      <div className="absolute top-[16%] sm:top-[16%] left-0 right-0 z-0 hidden group-hover:block transition-all duration-300">
+        <div className="border-t border-[#9DD1FE] left-5 sm:left-10 right-5 sm:right-10 flex flex-row items-center justify-between mt-2">
+          <Typography variant="hoverTitle" className="px-5 sm:px-10 py-3 sm:py-5 text-left text-xl sm:text-3xl">
             8-Bedroom
             <br />
             Waterfront Villa

@@ -13,10 +13,10 @@ export const typographyVariants = cva("", {
       heroTitle:
         "text-white font-extralight text-3xl sm:text-5xl md:text-7xl lg:text-8xl",
       bulletTitle: "text-black font-normal text-lg font-sans",
-      mainTitle:"text-black font-light text-4xl font-sans",
+      mainTitle:"text-black font-light text-sm sm:text-3xl font-sans",
       featuredMainTitle:"text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-light",
       heading1: "text-black font-noraml text-2xl font-sans",
-      heading2:'text-black font-normal text-base md:text-xl font-sans',
+      heading2:'text-black font-normal text-sm md:text-xl font-sans',
       cardTitle:'text-white font-sans text-lg font-normal',
       hoverTitle:"text-black font-light text-3xl font-sans",
       clientTitle:"text-black font-noraml text-4xl font-sans"
