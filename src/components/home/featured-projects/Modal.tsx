@@ -81,7 +81,7 @@ const Modal: React.FC<Props> = ({ isShowing, onClose }) => {
       />
 
       {/* Modal Content */}
-      <div className="w-full flex items-center justify-center py-8 relative border border-red-400">
+      <div className="w-full flex items-center justify-center py-8 relative">
         <div className="w-full opacity-0" ref={modalContent}>
           <div className="embla" ref={emblaRef}>
             <div className="embla__container">
