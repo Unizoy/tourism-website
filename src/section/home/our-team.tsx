@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { leaders } from "../../../data";
 import Typography from "@/components/typography/Typography";
 import Image from "next/image";
