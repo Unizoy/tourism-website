@@ -2,8 +2,9 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import Image from "next/image";
-
+import { FaArrowDown } from "react-icons/fa6";
+import { CiMap } from "react-icons/ci";
+import { LuListMinus } from "react-icons/lu";
 
 gsap.registerPlugin(useGSAP);
 
@@ -45,15 +46,15 @@ const Navbar = () => {
             <div>
               <button className="px-4 py-3 gap-2 text-white text-sm bg-white/10 rounded-md flex items-center">
                 EN
-                <Image src="/hero-section/icon-arrow.png" alt="Arrow Icon" width={20} height={20} />
+                <FaArrowDown />
               </button>
             </div>
             <div className="flex gap-x-2">
               <button className="px-4 py-3 bg-white rounded-md">
-                <Image src="/hero-section/icon-map.png" alt="map Icon" width={20} height={20} />
+              <CiMap className="text-black size-6" />
               </button>
               <button className="px-4 py-3 bg-white/20 rounded-md items-center border border-white">
-                <Image src="/hero-section/icon-list.png" alt="list Icon" width={20} height={20}/>
+              <LuListMinus className="size-5" />
               </button>
             </div>
           </div>

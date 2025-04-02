@@ -72,19 +72,19 @@ const ContactUs = () => {
   return (
     <div className="bg-white py-8 md:py-20 px-4">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-        <div className="space-y-10 font-sans">
+        <div className="space-y-8 font-sans">
           <Typography as="h1" variant="bulletTitle">
             &bull; Contact Us
           </Typography>
           <div>
-            <TextReveal className="text-4xl font-normal text-gray-900 mb-4">
+            <TextReveal className="text-xl md:text-4xl font-normal text-gray-900 mb-2">
               Complete This Form
             </TextReveal>
-            <TextReveal className="text-4xl font-normal text-gray-900">
+            <TextReveal className="text-2xl md:text-4xl font-normal text-gray-900">
               To Connect Our Team
             </TextReveal>
           </div>
-          <div className="space-y-8">
+          <div className="space-y-4">
             <p className="text-lg font-normal text-black">Follow Us</p>
             <div className="flex space-x-4 text-black">
               <Link href="#">

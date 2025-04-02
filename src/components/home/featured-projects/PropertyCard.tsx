@@ -84,7 +84,7 @@ const PropertyCard = ({ property }: Props) => {
       <div className="absolute top-5 sm:top-10 left-5 sm:left-10 right-5 sm:right-10 flex items-center justify-between">
         <Button
           variant="locationButton"
-          className="border-2 border-white group-hover:border-black group-hover:text-black transition-all duration-300 text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2"
+          className="flex justify-center items-center border-2 border-white group-hover:border-black group-hover:text-black transition-all duration-300 text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2"
         >
           <IoLocationOutline size={25} />
           Location Name

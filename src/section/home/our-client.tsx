@@ -15,7 +15,6 @@ gsap.registerPlugin(ScrollTrigger);
 const OurClient = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const clientRef = useRef(null);
-  const headingRef = useRef<HTMLHeadingElement | null>(null);
   const imagesRef = useRef(null);
   const spanRef = useRef(null);
   const detailRef = useRef(null);

@@ -20,9 +20,8 @@ export function ButtonAnimation({
   ...rest
 }: ButtonAnimationProps & React.ButtonHTMLAttributes<HTMLButtonElement>) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const lineRef = useRef(null)
-  const hasAnimated = useRef(false)
-  const tl = useRef<gsap.core.Timeline | null>(null);
+  const lineRef = useRef(null);
+  const hasAnimated = useRef(false);
 
   // useGSAP(() => {
   //   if (containerRef.current) {
@@ -81,7 +80,7 @@ export function ButtonAnimation({
       ease: "power3.out",
     });
 
-    tl.from(lineRef.current, { opacity: 0 });
+    tl.from(lineRef.current, { opacity: 0 }, "+=0");
 
     hasAnimated.current = true;
   }, []);
