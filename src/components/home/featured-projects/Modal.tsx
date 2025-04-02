@@ -107,7 +107,8 @@ const Modal: React.FC<Props> = ({ isShowing, onClose }) => {
         </button>
 
         {/* Bottom tabs */}
-        {/* <div className="absolute bottom-5 z-20 w-full hidden md:flex flex-row gap-2 px-4 md:px-48 py-2">
+      </div>
+        <div className="absolute bottom-10 z-20 w-full hidden md:flex flex-row gap-2 px-4 md:px-48">
           {modalTabs.map((tab, index) => (
             <div
               key={index}
@@ -142,8 +143,7 @@ const Modal: React.FC<Props> = ({ isShowing, onClose }) => {
               </div>
             </div>
           ))}
-        </div> */}
-      </div>
+        </div>
     </div>
   );
 };
